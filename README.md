@@ -257,7 +257,7 @@ O projeto utiliza cache para melhorar a performance das consultas de reconcilia√
 Exemplo:
 
 ```java
-@Cacheable(value = "reconciliacaoCache", key = "#transacaoId")
+@Cacheable(value = "reconciliacoes", key = "#transacaoId")
 ```
 
 ---
