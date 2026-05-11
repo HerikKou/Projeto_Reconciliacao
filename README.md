@@ -133,49 +133,7 @@ Exemplo:
 
 ---
 
-# 🐳 Docker Compose
 
-O projeto pode ser executado utilizando Docker Compose.
-
-```yaml
-services:
-
-  mysql:
-    image: mysql:8.0
-    container_name: mysql-reconciliacao
-    restart: always
-    environment:
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: reconciliacaodb
-    ports:
-      - "3306:3306"
-    volumes:
-      - mysql_data:/var/lib/mysql
-    healthcheck:
-      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
-      interval: 10s
-      timeout: 5s
-      retries: 10
-
-  reconciliacao:
-    image: projetocache
-    container_name: reconciliacao-app
-    restart: always
-    depends_on:
-      mysql:
-        condition: service_healthy
-    ports:
-      - "8080:8080"
-    environment:
-      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/reconciliacaodb
-      SPRING_DATASOURCE_USERNAME: root
-      SPRING_DATASOURCE_PASSWORD: root
-
-volumes:
-  mysql_data:
-```
-
----
 
 # ▶️ Como Executar
 
