@@ -43,16 +43,16 @@ Cada serviço possui sua própria responsabilidade dentro do fluxo financeiro.
 ---
 
 # 📊 Arquitetura Geral
+<img width="644" height="457" alt="Reconciliação" src="https://github.com/user-attachments/assets/719d81e0-9df4-44a1-9d7e-156c6e0e3a91" />
 
-![Arquitetura](./assets/arquitetura.png)
 
 ---
 
 # 🧠 Modelagem do Sistema
 
 A modelagem representa a relação entre os domínios da aplicação.
+<img width="745" height="261" alt="Modelagem da Reconciliação" src="https://github.com/user-attachments/assets/9feea28f-96b2-4dd8-b2a3-e4fb512d372f" />
 
-![Modelagem](./assets/modelagem.png)
 
 ---
 
@@ -237,14 +237,16 @@ GET /reconciliacao/transacao/1
 # ✅ Exemplo de Resposta
 
 ## POST
+<img width="841" height="443" alt="image" src="https://github.com/user-attachments/assets/a2e3e807-4e3b-4a5d-93ec-b66f9030c868" />
 
-![POST](./assets/post-response.png)
+
 
 ---
 
 ## GET
 
-![GET](./assets/get-response.png)
+<img width="845" height="408" alt="image" src="https://github.com/user-attachments/assets/04114afa-45ed-4ded-a30f-f578884753d1" />
+
 
 ---
 
@@ -255,7 +257,7 @@ O projeto utiliza cache para melhorar a performance das consultas de reconcilia�
 Exemplo:
 
 ```java
-@Cacheable(value = "reconciliacaoCache", key = "#transacaoId")
+@Cacheable(value = "reconciliacoes", key = "#transacaoId")
 ```
 
 ---
